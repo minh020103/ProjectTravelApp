@@ -2,6 +2,7 @@ package com.example.project.fragment.user;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,5 +32,6 @@ public class VideoFragment extends Fragment {
         UserMainActivity.window.setStatusBarColor(getResources().getColor(R.color.black, getActivity().getTheme()));
         UserMainActivity.toolbarUser.setVisibility(View.GONE);
         UserMainActivity.bnvUser.setItemBackground(getResources().getDrawable(R.color.black, getActivity().getTheme()));
+
     }
 }

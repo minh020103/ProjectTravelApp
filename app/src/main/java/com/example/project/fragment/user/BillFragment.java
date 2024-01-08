@@ -2,6 +2,7 @@ package com.example.project.fragment.user;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,6 @@ public class BillFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user_bill_layout , container, false);
-
-
         return view;
     }
     @Override
@@ -28,5 +27,6 @@ public class BillFragment extends Fragment {
         UserMainActivity.window.setStatusBarColor(getResources().getColor(R.color.color_main_app_3, getActivity().getTheme()));
         UserMainActivity.toolbarUser.setVisibility(View.VISIBLE);
         UserMainActivity.bnvUser.setItemBackground(getResources().getDrawable(R.color.white, getActivity().getTheme()));
+        
     }
 }
