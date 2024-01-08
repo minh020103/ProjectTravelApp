@@ -2,6 +2,7 @@ package com.example.project.fragment.user;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,5 +29,6 @@ public class ProfileFragment extends Fragment {
         UserMainActivity.window.setStatusBarColor(getResources().getColor(R.color.color_main_app_3, getActivity().getTheme()));
         UserMainActivity.toolbarUser.setVisibility(View.VISIBLE);
         UserMainActivity.bnvUser.setItemBackground(getResources().getDrawable(R.color.white, getActivity().getTheme()));
+
     }
 }

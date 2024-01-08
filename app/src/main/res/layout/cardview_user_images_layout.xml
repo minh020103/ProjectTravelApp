@@ -13,7 +13,7 @@
         android:id="@+id/imgMain"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/AnhDaiDienVD"
+        android:src="@drawable/anhdaidien"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="50mm"
