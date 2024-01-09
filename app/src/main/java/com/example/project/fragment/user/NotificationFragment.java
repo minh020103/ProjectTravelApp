@@ -26,9 +26,6 @@ public class NotificationFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        UserMainActivity.window.setStatusBarColor(getResources().getColor(R.color.color_main_app_3, getActivity().getTheme()));
-        UserMainActivity.toolbarUser.setVisibility(View.VISIBLE);
-        UserMainActivity.bnvUser.setItemBackground(getResources().getDrawable(R.color.white, getActivity().getTheme()));
 
     }
 }
