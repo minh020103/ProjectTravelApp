@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
 
 import com.example.project.R;
@@ -29,8 +30,8 @@ public class UserMainActivity extends AppCompatActivity {
     private ArrayList<Fragment> fragments;
     public static BottomNavigationView bnvUser;
     private CardView cvSearch;
-    public static Toolbar toolbarUser;
-    public static Window window;
+    private Toolbar toolbarUser;
+    private Window window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,18 +57,23 @@ public class UserMainActivity extends AppCompatActivity {
                 super.onPageSelected(position);
                 switch (position){
                     case UserViewPage2Adapter.HOME:
+                        lightNav();
                         bnvUser.getMenu().findItem(R.id.nv_user_home).setChecked(true);
                         break;
                     case UserViewPage2Adapter.VIDEO:
+                        darkNav();
                         bnvUser.getMenu().findItem(R.id.nv_user_video).setChecked(true);
                         break;
                     case UserViewPage2Adapter.BILL:
+                        lightNav();
                         bnvUser.getMenu().findItem(R.id.nv_user_bill).setChecked(true);
                         break;
                     case UserViewPage2Adapter.NOTIFICATION:
+                        lightNav();
                         bnvUser.getMenu().findItem(R.id.nv_user_notification).setChecked(true);
                         break;
                     case UserViewPage2Adapter.PROFILE:
+                        lightNav();
                         bnvUser.getMenu().findItem(R.id.nv_user_profile).setChecked(true);
                         break;
                 }
@@ -77,23 +83,39 @@ public class UserMainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.nv_user_home){
+                    lightNav();
                     viewPager2.setCurrentItem(UserViewPage2Adapter.HOME);
                 }
                 if (item.getItemId() == R.id.nv_user_video){
+                    darkNav();
                     viewPager2.setCurrentItem(UserViewPage2Adapter.VIDEO);
                 }
                 if (item.getItemId() == R.id.nv_user_bill){
+                    lightNav();
                     viewPager2.setCurrentItem(UserViewPage2Adapter.BILL);
                 }
                 if (item.getItemId() == R.id.nv_user_notification){
+                    lightNav();
                     viewPager2.setCurrentItem(UserViewPage2Adapter.NOTIFICATION);
                 }
                 if (item.getItemId() == R.id.nv_user_profile){
+                    lightNav();
                     viewPager2.setCurrentItem(UserViewPage2Adapter.PROFILE);
                 }
                 return true;
             }
         });
 
+    }
+    private void lightNav(){
+        window.setStatusBarColor(getResources().getColor(R.color.color_main_app_3, getTheme()));
+        toolbarUser.setVisibility(View.VISIBLE);
+        bnvUser.setItemBackground(getResources().getDrawable(R.color.white, getTheme()));
+    }
+
+    private void darkNav(){
+        window.setStatusBarColor(getResources().getColor(R.color.black, getTheme()));
+        toolbarUser.setVisibility(View.GONE);
+        bnvUser.setItemBackground(getResources().getDrawable(R.color.black, getTheme()));
     }
 }

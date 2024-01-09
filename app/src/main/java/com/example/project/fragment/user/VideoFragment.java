@@ -29,9 +29,6 @@ public class VideoFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        UserMainActivity.window.setStatusBarColor(getResources().getColor(R.color.black, getActivity().getTheme()));
-        UserMainActivity.toolbarUser.setVisibility(View.GONE);
-        UserMainActivity.bnvUser.setItemBackground(getResources().getDrawable(R.color.black, getActivity().getTheme()));
 
     }
 }
